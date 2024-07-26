@@ -6,7 +6,6 @@ B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 # b64 uses 24bit sequences. This means that padding needs to be added if it's not a  24bit sequence.
 def convert_to_b64(string):
     binary = get_binary_representation(string)
-    # print(binary)
     sequence = ""
     encoding = ""
     count = 0
@@ -28,11 +27,9 @@ def get_24_bit_sequence(binary):
     cursor = 0
     track = ""
     b64encoding = ""
-    for idx, value in enumerate(binary):
-        track += value
-        # print(track)
+    for bit in binary:
+        track += bit
         cursor += 1
-        # print(cursor)
         if cursor == 6:
             b64encoding += B64[int(track, 2)]
             cursor = 0
@@ -41,7 +38,6 @@ def get_24_bit_sequence(binary):
     if 0 < cursor < 6:
         b64encoding += B64[int(track, 2) << (6 - cursor)]
 
-    # print(total)
     for _ in range(int((24 - len(binary)) / 6)):
         b64encoding += "="
 
