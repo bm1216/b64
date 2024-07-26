@@ -31,16 +31,14 @@ O = 01001111
 ```
 
 Then, they are encoded starting from the left.
+
 `010010|001000|101010|011000||100110|001001|111`
 
 Base-64 encoding is done in 24 bit sequences, which is why additional padding is
 added at the end to ensure we have 24 bits.
 
+
 `010010|001000|101010|011000||100110|001001|111000|000000||`
 
 which is `SEVMTE8=`
-
-```
-
-```
 
