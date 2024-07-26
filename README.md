@@ -40,5 +40,5 @@ added at the end to ensure we have 24 bits.
 
 `010010|001000|101010|011000||100110|001001|111000|000000||`
 
-which is `SEVMTE8=`
+which encodes to `SEVMTE8=`
 
