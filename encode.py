@@ -45,10 +45,16 @@ def get_24_bit_sequence(binary):
 
 
 def get_binary_representation(string):
-    x = 0
-    format_specifier = f"0{len(string)*8}b"
-    for char in string:
-        x <<= 8
-        x |= ord(char) | 0x00000000
+    encoding = string.encode()
+    return "".join([format(x, "08b") for x in bytearray(encoding)])
 
-    return format(x, format_specifier)
+    # Original ASCII implementation.
+    # return format(int(binary, 2), f"0{len(encoding)*8}b")
+    # x = 0
+    # format_specifier = f"0{len(string)*8}b"
+    # for char in string:
+    #     print(ord(char))
+    #     x <<= 8
+    #     x |= ord(char) | 0x00000000
+    #
+    # return format(x, format_specifier)
