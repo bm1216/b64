@@ -1,5 +1,7 @@
 ## b64
 
+This is my attempt at making a base64 encoder and decoder from scratch.
+
 Sources used:
 
 - https://en.wikipedia.org/wiki/Base64#Base64_table_from_RFC_4648
