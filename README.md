@@ -8,6 +8,8 @@ Sources used:
 - https://www.rapidtables.com/code/text/ascii-table.html
 - https://www.redhat.com/sysadmin/base64-encoding#:~:text=How%20Base64%20works,sysadmin's%20guide%20to%20Bash%20scripting.%20%5D
 - https://docs.python.org/3/howto/unicode.html
+- https://docs.python.org/3/library/string.html#string.Formatter
+- https://datatracker.ietf.org/doc/html/rfc4648#section-4
 
 ### Usage
 
