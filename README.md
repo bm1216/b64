@@ -16,6 +16,9 @@ Sources used:
 ```
 > python main.py hello
 aGVsbG8=
+
+> python main.py -d aGVsbG8=
+hello
 ```
 
 ### Theory
