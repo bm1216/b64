@@ -2,6 +2,9 @@
 
 This is my attempt at making a base64 encoder and decoder from scratch.
 
+The difference between this and python's `base64` module is that mine works
+natively with python `str`.
+
 Sources used:
 
 - https://en.wikipedia.org/wiki/Base64#Base64_table_from_RFC_4648

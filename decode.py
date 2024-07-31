@@ -9,9 +9,9 @@ def convert_from_b64(encoded_string):
     binary_rep = ""
     while i < len(encoded_string):
         char = encoded_string[i]
-        ## Padding is just a byte full of zeroes
+        ## Padding is just a byte full of zeroes. Don't need to add rep for padding.
         if char == "=":
-            binary_rep += format(0, "06b")
+            # binary_rep += format(0, "06b")
             i += 1
             continue
 
@@ -20,6 +20,11 @@ def convert_from_b64(encoded_string):
         binary_rep += format(idx, "06b")
         i += 1
 
-    # print((binary_rep))
-    x = format("%x" % int(binary_rep, 2))
-    return bytes.fromhex(x).decode("utf-8").strip("\x00")
+    ## Remove any additional padding that is added by the encoding.
+    if len(binary_rep) % 8 != 0:
+        binary_rep = binary_rep[: -(len(binary_rep) % 8)]
+    ## We do this complex thing instead of just
+    ## format("%x" % len(binary_rep, 2))
+    ## because the above doesn't account for any leading zeros that might be present in the binary representation and just strips them.
+    x = "{0:0{1}x}".format(int(binary_rep, 2), len(binary_rep) // 4)
+    return bytes.fromhex(x).decode("utf-8")
