@@ -5,6 +5,12 @@ This is my attempt at making a base64 encoder and decoder from scratch.
 The difference between this and python's `base64` module is that mine works
 natively with python `str`.
 
+A conclusion as part of this project has been that Base-64 DOES NOT shorten the
+length of a string. If you have a variable length of string, do not use Base-64
+to try to make it a consistent and shorter length. Base-64 is generally used to
+convert data to a consistent FORMAT. Use it if you need to make sure a string
+looks the same i.e is within those 64 characters.
+
 Sources used:
 
 - https://en.wikipedia.org/wiki/Base64#Base64_table_from_RFC_4648
@@ -22,6 +28,18 @@ aGVsbG8=
 
 > python main.py -d aGVsbG8=
 hello
+```
+
+### Testing
+
+```
+pytest -vv
+```
+
+### Comparison
+
+```
+python comparison.py
 ```
 
 ### Theory

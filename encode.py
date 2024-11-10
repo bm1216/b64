@@ -1,3 +1,5 @@
+import time
+
 B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
 
@@ -6,7 +8,6 @@ B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 # b64 uses 24bit sequences. This means that padding needs to be added if it's not a 24bit sequence.
 def convert_to_b64(string):
     binary = get_binary_representation(string)
-    # print(binary)
     sequence = ""
     encoding = ""
     count = 0
